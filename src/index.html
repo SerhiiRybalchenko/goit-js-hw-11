@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
+    <title>Image Search App</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1/dist/css/iziToast.min.css">
   </head>
   <body>
-       
-      <form class="search-form" autocomplete="off">
-        <input type="search-input" name="search" placeholder="Search images..." />
-          <button class="search-btn" type="submit">Search</button>
-        </form>
-        <div class="cards"><span class="loader is-hidden"></span>
-        <ul class="card-list"></ul>
-      </div>
- 
+    <form class="search-form">
+      <input
+        class="search-input"
+        type="search"
+        name="search"
+        placeholder="Search images..."
+      /><button class="search-btn" type="submit">Search</button>
+    </form>
+    <div class="cards">
+      <span class="loader is-hidden"></span>
+      <ul class="card-list"></ul>
+    </div>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>

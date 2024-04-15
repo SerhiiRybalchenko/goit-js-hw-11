@@ -1,4 +1,4 @@
-const API_KEY = '43258004-167cb59a45a78bad01bc517c7';
+const API_KEY = '43397479-99c41be14727e3df52aa3c242';
 const BASE_URL = 'https://pixabay.com/api/?';
 
 export function fetchCards(searchQuery) {
@@ -10,8 +10,21 @@ export function fetchCards(searchQuery) {
     safesearch: true,
   });
 
-  return fetch(${BASE_URL}${SEARCH_PARAMS}).then(res => {
-    if (!res.ok) throw new Error('Failed to fetch');
-    return res.json();
-  });
+  const url = `${BASE_URL}${SEARCH_PARAMS}`;
+
+  return fetch(url)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Failed to fetch');
+      }
+      return res.json();
+    })
+    .then(data => {
+ 
+      return data;
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      throw error; 
+    });
 }
