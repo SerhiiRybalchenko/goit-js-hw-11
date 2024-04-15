@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1/dist/css/iziToast.min.css">
   </head>
   <body>
-    <main>        
-      <form class="form-search" autocomplete="off">
-        <input type="search" name="search" placeholder="Search images..." />
+       
+      <form class="search-form" autocomplete="off">
+        <input type="search-input" name="search" placeholder="Search images..." />
           <button class="search-btn" type="submit">Search</button>
         </form>
-        <div class="loader-wrapper"><span class="loader is-hidden"></span></div>
-        <ul class="gallery-list"></ul>
+        <div class="cards"><span class="loader is-hidden"></span>
+        <ul class="card-list"></ul>
       </div>
-    </main>
+ 
     <script type="module" src="./main.js"></script>
   </body>
 </html>

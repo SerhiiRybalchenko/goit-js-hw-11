@@ -10,7 +10,7 @@ const instance = new SimpleLightbox('.card-item a', {
 });
 
 export function renderCards(cardsList, data) {
-  if (!data  !data.hits  !data.hits.length) {
+  if (!data.hits.length) {
     iziToast.error({
       title: 'Error',
       message:
@@ -19,7 +19,6 @@ export function renderCards(cardsList, data) {
     });
     return;
   }
-  
   const markup = getMarkup(data.hits);
   cardsList.insertAdjacentHTML('beforeend', markup);
   instance.refresh();
@@ -37,8 +36,8 @@ export function getMarkup(data) {
         comments,
         downloads,
       }) => `<li class="card-item">
-  <a href="${largeImageURL}">
-    <img src="${webformatURL}" alt="${tags}" height="300"/>
+  <a href=${largeImageURL}
+    ><img src=${webformatURL} alt="${tags}" height="300"/>
     <ul class="card-info">
       <li>
         Likes
@@ -56,8 +55,8 @@ export function getMarkup(data) {
         Downloads
         <p>${downloads}</p>
       </li>
-    </ul>
-  </a>
+    </ul></a
+  >
 </li>`
     )
     .join('');
